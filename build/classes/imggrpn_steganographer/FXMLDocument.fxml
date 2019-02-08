@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane id="GridPane" prefHeight="481.0" prefWidth="831.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="imggrpn_steganographer.FXMLDocumentController">
+ <columnConstraints>
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+      <RowConstraints maxHeight="25.0" minHeight="25.0" prefHeight="25.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="298.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="89.0" vgrow="SOMETIMES" />
+   </rowConstraints>
+   <children>
+      <GridPane style="-fx-background-color: lightgray;" GridPane.rowIndex="2">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="200.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.0" minWidth="1.0" prefWidth="1.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="200.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.0" minWidth="1.0" prefWidth="1.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="50.0" minWidth="50.0" prefWidth="50.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.0" minWidth="1.0" prefWidth="1.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="207.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="233.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <BorderPane prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: gray;">
+               <bottom>
+                  <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                    <items>
+                      <Button fx:id="loadCoverButton" mnemonicParsing="false" onAction="#handleLoadEvent" text="Load" />
+                        <Button fx:id="saveCoverButton" mnemonicParsing="false" onAction="#handleSaveEvent" text="Save" />
+                        <Button fx:id="clearCoverButton" mnemonicParsing="false" onAction="#handleClearEvent" text="Clear" />
+                    </items>
+                  </ToolBar>
+               </bottom>
+               <center>
+                  <ScrollPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <content>
+                        <ImageView fx:id="coverImage" fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                     </content>
+                  </ScrollPane>
+               </center>
+               <top>
+                  <BorderPane prefHeight="18.0" prefWidth="205.0" style="-fx-background-color: lightGray;" BorderPane.alignment="CENTER">
+                     <center>
+                        <Label text="Cover Image" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+               </top>
+            </BorderPane>
+            <BorderPane prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: gray;" GridPane.columnIndex="2">
+               <bottom>
+                  <ToolBar prefHeight="40.0" prefWidth="200.0" style="-fx-border-color: ;" BorderPane.alignment="CENTER">
+                    <items>
+                      <Button fx:id="loadSecretButton" mnemonicParsing="false" onAction="#handleLoadEvent" text="Load" />
+                        <Button fx:id="saveSecretButton" mnemonicParsing="false" onAction="#handleSaveEvent" text="Save" />
+                        <Button fx:id="clearSecretButton" mnemonicParsing="false" onAction="#handleClearEvent" text="Clear" />
+                    </items>
+                  </ToolBar>
+               </bottom>
+               <center>
+                  <ScrollPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <content>
+                        <ImageView fx:id="secretImage" fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                     </content>
+                  </ScrollPane>
+               </center>
+               <top>
+                  <BorderPane prefHeight="18.0" prefWidth="205.0" style="-fx-background-color: lightgray;" BorderPane.alignment="CENTER">
+                     <center>
+                        <Label text="Secret Image" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+               </top>
+            </BorderPane>
+            <BorderPane prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: gray;" GridPane.columnIndex="6">
+               <bottom>
+                  <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                    <items>
+                      <Button fx:id="loadCompButton" mnemonicParsing="false" onAction="#handleLoadEvent" text="Load" />
+                        <Button fx:id="saveCompButton" mnemonicParsing="false" onAction="#handleSaveEvent" text="Save" />
+                        <Button fx:id="clearCompButton" mnemonicParsing="false" onAction="#handleClearEvent" text="Clear" />
+                    </items>
+                  </ToolBar>
+               </bottom>
+               <center>
+                  <ScrollPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <content>
+                        <ImageView fx:id="compositeImage" fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                     </content>
+                  </ScrollPane>
+               </center>
+               <top>
+                  <BorderPane prefHeight="18.0" prefWidth="211.0" style="-fx-background-color: lightGray;" BorderPane.alignment="CENTER">
+                     <center>
+                        <Label text="Composite Image" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+               </top>
+            </BorderPane>
+            <GridPane alignment="CENTER" style="-fx-background-color: lightgray;" GridPane.columnIndex="4">
+              <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="21.0" minWidth="2.0" prefWidth="5.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="48.0" minWidth="5.0" prefWidth="45.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="110.0" minHeight="10.0" prefHeight="87.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="72.0" minHeight="45.0" prefHeight="52.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="61.0" minHeight="39.0" prefHeight="55.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="100.0" minHeight="10.0" prefHeight="89.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Button fx:id="toCmpButton" mnemonicParsing="false" onAction="#handleTransformEvent" prefHeight="45.0" prefWidth="40.0" text="-&gt;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Button fx:id="fromCmpButton" mnemonicParsing="false" onAction="#handleTransformEvent" prefHeight="45.0" prefWidth="40.0" text="&lt;-" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+               </children>
+            </GridPane>
+            <GridPane GridPane.columnIndex="2" GridPane.rowIndex="1">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="64.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="50.0" minWidth="50.0" prefWidth="50.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="5.0" minWidth="5.0" prefWidth="5.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="50.0" minWidth="50.0" prefWidth="50.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="59.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Button fx:id="imageToTextButton" mnemonicParsing="false" onAction="#handleTransformEvent" prefHeight="50.0" prefWidth="65.0" rotate="90.0" text="-&gt;" GridPane.columnIndex="3" />
+                  <Button fx:id="textToImageButton" mnemonicParsing="false" onAction="#handleTransformEvent" prefHeight="50.0" prefWidth="65.0" rotate="90.0" text="&lt;-" GridPane.columnIndex="1" />
+               </children>
+            </GridPane>
+         </children>
+      </GridPane>
+      <MenuBar GridPane.rowIndex="1">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+                  <Menu fx:id="loadMenuItem" mnemonicParsing="false" text="Load">
+                    <items>
+                      <MenuItem fx:id="loadCoverMenu" mnemonicParsing="false" onAction="#handleLoadEvent" text="Cover img" />
+                        <MenuItem fx:id="loadSecretMenu" mnemonicParsing="false" onAction="#handleLoadEvent" text="Secret img" />
+                        <MenuItem fx:id="loadCompMenu" mnemonicParsing="false" onAction="#handleLoadEvent" text="Composite img" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="loadTextMenu" mnemonicParsing="false" onAction="#handleLoadEvent" text="Text" />
+                    </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Save">
+                    <items>
+                      <MenuItem fx:id="saveCoverMenu" mnemonicParsing="false" onAction="#handleSaveEvent" text="Cover img" />
+                        <MenuItem fx:id="saveSecretMenu" mnemonicParsing="false" onAction="#handleSaveEvent" text="Secret img" />
+                        <MenuItem fx:id="saveCompMenu" mnemonicParsing="false" onAction="#handleSaveEvent" text="Composite img" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="saveTextMenu" mnemonicParsing="false" onAction="#handleSaveEvent" text="Text" />
+                    </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Clear">
+                    <items>
+                      <MenuItem fx:id="clearCoverMenu" mnemonicParsing="false" onAction="#handleClearEvent" text="Cover img" />
+                        <MenuItem fx:id="clearSecretMenu" mnemonicParsing="false" onAction="#handleClearEvent" text="Secret img" />
+                        <MenuItem fx:id="clearCompMenu" mnemonicParsing="false" onAction="#handleClearEvent" text="Composite img" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="clearTextMenu" mnemonicParsing="false" onAction="#handleClearEvent" text="Text" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="clearAllMenu" mnemonicParsing="false" onAction="#handleClearEvent" text="Clear All" />
+                    </items>
+                    </Menu>
+                  <SeparatorMenuItem mnemonicParsing="false" />
+              <MenuItem fx:id="closeMenu" mnemonicParsing="false" onAction="#handleCloseEvent" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem fx:id="toCmpMenu" mnemonicParsing="false" onAction="#handleTransformEvent" text="Encode" />
+                  <MenuItem fx:id="fromCmpMenu" mnemonicParsing="false" onAction="#handleTransformEvent" text="Decode" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem fx:id="textToImageMenu" mnemonicParsing="false" onAction="#handleTransformEvent" text="Text to Image" />
+                  <MenuItem fx:id="imageToTextMenu" mnemonicParsing="false" onAction="#handleTransformEvent" text="Image to Text" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <BorderPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: gray; -fx-border-color: gray;" GridPane.rowIndex="3">
+         <top>
+            <BorderPane prefHeight="18.0" prefWidth="658.0" style="-fx-background-color: lightgray; -fx-border-color: gray;" BorderPane.alignment="CENTER">
+               <center>
+                  <Label text="Text Message Area" BorderPane.alignment="CENTER" />
+               </center>
+            </BorderPane>
+         </top>
+         <center>
+            <GridPane BorderPane.alignment="CENTER">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="400.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="90.0" minWidth="90.0" prefWidth="90.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <TextArea fx:id="textArea" onKeyTyped="#handleTextKeyEvent" prefHeight="200.0" prefWidth="200.0" />
+                  <ToolBar blendMode="SRC_ATOP" orientation="VERTICAL" prefHeight="40.0" prefWidth="200.0" GridPane.columnIndex="1">
+                    <items>
+                      <Button fx:id="loadTextButton" mnemonicParsing="false" onAction="#handleLoadEvent" prefHeight="25.0" prefWidth="80.0" text="Load" />
+                        <Button fx:id="saveTextButton" mnemonicParsing="false" onAction="#handleSaveEvent" prefHeight="25.0" prefWidth="80.0" text="Save" />
+                        <Button fx:id="clearTextButton" mnemonicParsing="false" onAction="#handleClearEvent" prefHeight="25.0" prefWidth="80.0" text="Clear" />
+                    </items>
+                  </ToolBar>
+               </children>
+            </GridPane>
+         </center>
+      </BorderPane>
+   </children>
+
+</GridPane>
